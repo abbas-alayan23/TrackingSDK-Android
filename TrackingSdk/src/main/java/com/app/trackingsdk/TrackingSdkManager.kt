@@ -54,13 +54,13 @@ class TrackingSdkManager {
         iapObject: IapObject?,
         context: Context
     ) {
-        val adjustEvent = AdjustManager.getParamsToAdjust(adjustSubscriptionEventToken, iapObject, context)
+        val adjustEvent = AdjustManager().getParamsToAdjust(adjustSubscriptionEventToken, iapObject, context)
         Adjust.trackEvent(adjustEvent)
     }
 
 
     fun checkIsSubscribed(context: Context, entiltmentId :String,onResult: (Boolean) -> Unit) {
-        RevenueCatManager.isUserSubscribed(context, entitlementId = entiltmentId) { isSubscribed ->
+        RevenueCatManager().isUserSubscribed(context, entitlementId = entiltmentId) { isSubscribed ->
             onResult(isSubscribed)
         }
     }
@@ -73,11 +73,11 @@ class TrackingSdkManager {
         onResult: (String, IapObject?) -> Unit
     ) {
         // Present RevenueCat paywall
-        RevenueCatManager.presentPayWall(caller) { result, customerInfo ->
+        RevenueCatManager().presentPayWall(caller) { result, customerInfo ->
             when (result) {
                 "successfully purchased" -> {
                     // Initialize BillingManager to capture orderId and purchaseToken
-                    BillingManager.initialize(context) { orderId, purchaseToken ->
+                    BillingManager().initialize(context) { orderId, purchaseToken ->
                         // Create IapObject with retrieved orderId and purchaseToken
                         val iapObject = customerInfo?.let {
                             createIapObjectFromCustomerInfo(it, userId = userId, orderId = orderId, purchaseToken = purchaseToken)
@@ -106,9 +106,9 @@ class TrackingSdkManager {
         context: Context,
         userId: String
     ) {
-        AdjustManager.initialize(context, adjustKey, isDebug, userId)
-        OneSignalInitializer.initialize(context, oneSignalKey)
-        RevenueCatManager.initialize(context, revenueCatKey, userId)
+        AdjustManager().initialize(context, adjustKey, isDebug, userId)
+        OneSignalInitializer().initialize(context, oneSignalKey)
+        RevenueCatManager().initialize(context, revenueCatKey, userId)
     }
 
     fun createIapObjectFromCustomerInfo(

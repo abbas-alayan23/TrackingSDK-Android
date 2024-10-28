@@ -73,8 +73,8 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 from(components["release"])
                 groupId = "com.github.abbas-alayan23"
-                artifactId = "sdks-setup"
-                version = "1.3"
+                artifactId = "tracking-sdk"
+                version = "1.4"
             }
         }
     }
