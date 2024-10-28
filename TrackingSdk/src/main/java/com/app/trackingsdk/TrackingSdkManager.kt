@@ -12,7 +12,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
 import com.revenuecat.purchases.CustomerInfo
 
-object TrackingSdkManager {
+class TrackingSdkManager {
 
     private lateinit var remoteConfig: FirebaseRemoteConfig
 

@@ -2,7 +2,7 @@ package com.app.trackingsdk.models
 import android.content.Context
 import com.android.billingclient.api.*
 
-object BillingManager : PurchasesUpdatedListener {
+class BillingManager : PurchasesUpdatedListener {
 
     private lateinit var billingClient: BillingClient
     private var onPurchaseSuccess: ((String, String) -> Unit)? = null // Callback for orderId, purchaseToken

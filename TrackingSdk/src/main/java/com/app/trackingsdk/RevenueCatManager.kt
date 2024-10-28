@@ -21,7 +21,7 @@ import com.revenuecat.purchases.ui.revenuecatui.activity.PaywallResult
 import com.revenuecat.purchases.ui.revenuecatui.activity.PaywallResultHandler
 import java.util.Date
 
-object RevenueCatManager :PaywallResultHandler {
+class RevenueCatManager :PaywallResultHandler {
     private var paywallActivityLauncher: PaywallActivityLauncher? = null
     private var paywallResultCallback: ((String, CustomerInfo?) -> Unit)? = null
 

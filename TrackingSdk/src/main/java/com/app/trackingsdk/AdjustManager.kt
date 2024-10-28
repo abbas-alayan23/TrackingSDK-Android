@@ -11,7 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-object AdjustManager {
+class AdjustManager {
 
     fun initialize(context: Context, adjustKey: String, isDebug: Boolean, userId: String) {
         val config = AdjustConfig(

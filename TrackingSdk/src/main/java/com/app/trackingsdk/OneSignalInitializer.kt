@@ -9,7 +9,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-object OneSignalInitializer {
+class OneSignalInitializer {
 
     fun initialize(context: Context, oneSignalKey: String) {
         OneSignal.Debug.logLevel = LogLevel.DEBUG
