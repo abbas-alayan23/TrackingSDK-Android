@@ -74,7 +74,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.abbas-alayan23"
                 artifactId = "sdks-setup"
-                version = "1.0"
+                version = "1.3"
             }
         }
     }
