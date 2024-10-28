@@ -24,4 +24,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "TestSdkNew"
 include(":app")
-include(":TrackingSdk")
