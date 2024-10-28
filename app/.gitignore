@@ -1,1 +1,6 @@
 /build
+# Ignore gradle.properties file to protect credentials
+gradle.properties
+
+# Ignore local.properties (often used for environment-specific properties)
+local.properties
